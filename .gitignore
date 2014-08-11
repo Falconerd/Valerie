@@ -34,3 +34,13 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+# PSD/AI etc
+*.psd
+*.ai
+
+# Impact
+lib/impact/
+lib/weltmeister/
+tools/
+weltmeister.html
