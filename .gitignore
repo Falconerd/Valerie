@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -42,6 +43,7 @@ Icon
 # Impact
 lib/impact/
 lib/weltmeister/
+lib/plusplus/
 tools/
 weltmeister.html
 stuffThatIsn't/
