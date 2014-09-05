@@ -20,12 +20,100 @@
 			bottom: 0;
 			margin: auto;
 		}
+
+		#playerUI {
+			position:absolute;
+			top: 2%;
+			left: 2%;
+			z-index: 9999;
+		}
+
+		#playerUIPortraitBackground {
+			width: 0;
+			height: 0;
+			border: 50px solid transparent;
+			border-bottom-color: #000000;
+			position: relative;
+			top: -50px;
+		}
+
+		#playerUIPortraitBackground:after {
+			content: '';
+			position: absolute;
+			left: -50px;
+			top: 50px;
+			width: 0;
+			height: 0;
+			border: 50px solid transparent;
+			border-top-color: #000000;
+		}
+
+		#playerUIBars {
+			margin-top: -60px;
+			margin-left:92px;
+		}
+
+		#playerUIHealthBackground {
+			padding: 1px;
+			box-sizing: border-box;
+			height: 10px;
+			width: 120px;
+			-webkit-transform: skew(45deg);
+			   -moz-transform: skew(45deg);
+			     -o-transform: skew(45deg);
+			background: black;
+		}
+
+		#playerUIHealthBar {
+			height: 8px;
+			width: 118px;
+			background: lime;
+		}
+
+		#playerUIEnergyBackground {
+			padding: 1px;
+			box-sizing: border-box;
+			height: 6px;
+			width: 80px;
+			-webkit-transform: skew(-45deg);
+			   -moz-transform: skew(-45deg);
+			     -o-transform: skew(-45deg);
+			background: black;
+		}
+
+		#playerUIEnergyBar {
+			height: 4px;
+			width: 78px;
+			background: orange;
+		}
+
 	</style>
 
 	<script type="text/javascript" src="lib/impact/impact.js"></script>
 	<script type="text/javascript" src="lib/game/main.js"></script>
 </head>
 <body>
+<div id="ui">
+	<div id="playerUI">
+		<div id="playerUIPortraitBackground">
+			<div id="platerUIPortraitImage">
+				
+			</div>
+		</div>
+		<div id="playerUIBars">
+			<div id="playerUIHealthBackground">
+				<div id="playerUIHealthBar">
+					
+				</div>
+			</div>
+			<div id="playerUIEnergyBackground">
+				<div id="playerUIEnergyBar">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 	<canvas id="canvas"></canvas>
 </body>
 </html>
