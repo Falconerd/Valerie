@@ -21,24 +21,27 @@
 			margin: auto;
 		}
 
-		#playerUI {
-			position:absolute;
+		#ui {}
+
+		#ui-player {}
+
+		#ui-player-status {
+			position: absolute;
 			top: 2%;
 			left: 2%;
-			z-index: 9999;
+			z-index: 9000;
 		}
 
-		#playerUIPortraitBorder {
+		#ui-player-status-portrait-border {
 			width: 0;
 			height: 0;
 			border: 50px solid transparent;
 			border-bottom-color: #000000;
 			position: absolute;
 			top: -50px;
-			z-index: 9999;
 		}
 
-		#playerUIPortraitBorder:after {
+		#ui-player-status-portrait-border:after {
 			content: '';
 			position: absolute;
 			left: -50px;
@@ -47,10 +50,9 @@
 			height: 0;
 			border: 50px solid transparent;
 			border-top-color: #000000;
-			z-index: 9999;
 		}
 
-		#playerUIPortraitImage {
+		#ui-player-status-portrait-image {
 			content: '';
 			background: url('media/ui/portrait.png') no-repeat;
 			position: absolute;
@@ -58,15 +60,15 @@
 			top: 2px;
 			height: 96px;
 			width: 96px;
-			z-index: 10001;
+			z-index: 9001;
 		}
 
-		#playerUIBars {
+		#ui-player-status-bars {
 			margin-top: 40px;
 			margin-left: 94px;
 		}
 
-		#playerUIHealthBackground {
+		#ui-player-status-bars-health-border {
 			padding: 1px;
 			box-sizing: border-box;
 			height: 10px;
@@ -77,13 +79,13 @@
 			background: black;
 		}
 
-		#playerUIHealthBar {
+		#ui-player-status-bars-health-bar {
 			height: 8px;
 			width: 118px;
 			background: rgb(0,255,0);
 		}
 
-		#playerUIEnergyBackground {
+		#ui-player-status-bars-energy-border {
 			padding: 1px;
 			box-sizing: border-box;
 			height: 6px;
@@ -95,10 +97,92 @@
 			margin-left: 2px;
 		}
 
-		#playerUIEnergyBar {
+		#ui-player-status-bars-energy-bar {
 			height: 4px;
 			width: 78px;
 			background: orange;
+		}
+
+		#ui-player-skills {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 300px;
+			height: 300px;
+		}
+
+		#ui-player-skills-container {
+			position: relative;
+			width: 300px;
+			height: 300px;
+		}
+
+		#ui-player-skills-1-border {
+			top: 100px;
+			left: 150px;
+			width: 0;
+			height: 0;
+			border: 50px solid transparent;
+			border-bottom-color: #333;
+			position: absolute;
+			z-index: 9999;
+		}
+
+		#ui-player-skills-1-border:after {
+			content: '';
+			position: absolute;
+			left: -50px;
+			top: 50px;
+			width: 0;
+			height: 0;
+			border: 50px solid transparent;
+			border-top-color: #333;
+			z-index: 9999;
+		}
+
+		#ui-player-skills-1-image {
+			content: '';
+			background: url('media/ui/skills/attack.png') no-repeat;
+			position: absolute;
+			right: -48px;
+			top: 2px;
+			height: 96px;
+			width: 96px;
+			z-index: 10001;
+		}
+
+		#ui-player-skills-2-border {
+			top: 100px;
+			left: 125px;
+			width: 0;
+			height: 0;
+			border: 25px solid transparent;
+			border-bottom-color: #333;
+			position: absolute;
+			z-index: 9999;
+		}
+
+		#ui-player-skills-2-border:after {
+			content: '';
+			position: absolute;
+			left: -25px;
+			top: 25px;
+			width: 0;
+			height: 0;
+			border: 25px solid transparent;
+			border-top-color: #333;
+			z-index: 9999;
+		}
+
+		#ui-player-skills-2-image {
+			content: '';
+			background: url('media/ui/skills/ice-spear.png') no-repeat;
+			position: absolute;
+			right: -24px;
+			top: 2px;
+			height: 48px;
+			width: 48px;
+			z-index: 10001;
 		}
 
 	</style>
@@ -108,27 +192,47 @@
 </head>
 <body>
 <div id="ui">
-	<div id="playerUI">
-		<div id="playerUIPortraitBorder">
-			<div id="playerUIPortraitBackground">
-				<div id="playerUIPortraitImage">
-					
-				</div>
+
+	<div id="ui-player">
+		
+		<div id="ui-player-status">
+
+			<div id="ui-player-status-portrait-border">
+				<div id="ui-player-status-portrait-image"></div>
 			</div>
+
+			<div id="ui-player-status-bars">
+
+				<div id="ui-player-status-bars-health-border">
+					<div id="ui-player-status-bars-health-bar"></div>
+				</div>
+
+				<div id="ui-player-status-bars-energy-border">
+					<div id="ui-player-status-bars-energy-bar"></div>
+				</div>
+
+			</div>
+
 		</div>
-		<div id="playerUIBars">
-			<div id="playerUIHealthBackground">
-				<div id="playerUIHealthBar">
-					
+
+		<div id="ui-player-skills">
+
+			<div id="ui-player-skills-container">
+
+				<div id="ui-player-skills-1-border">
+					<div id="ui-player-skills-1-image"></div>
 				</div>
-			</div>
-			<div id="playerUIEnergyBackground">
-				<div id="playerUIEnergyBar">
-					
+
+				<div id="ui-player-skills-2-border">
+					<div id="ui-player-skills-2-image"></div>
 				</div>
+
 			</div>
+
 		</div>
+
 	</div>
+
 </div>
 	<canvas id="canvas"></canvas>
 </body>
